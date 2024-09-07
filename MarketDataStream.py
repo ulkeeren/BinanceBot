@@ -1,3 +1,5 @@
+import os.path
+
 from binance.um_futures import UMFutures
 from FileIO import FileIO
 import pandas as pd
@@ -31,7 +33,7 @@ class MarketDataFetcher():
             df = pd.concat([df_before,df],axis = 0)
 
         df = df.drop_duplicates(keep="last",subset = "Open Time")
-        df.to_csv(f"{self.market_data_directory}/{pair_in}/{pair_in}_{interval_in}.csv",index = False)
+        df.to_csv(os.path.join("MarketData",pair_in,f"{pair_in}_{interval_in}.csv"),index = False)
 
     def getWhitelistPairsPastData(self):
         intervals = ["1m", "5m", "15m", "1h", "4h"]

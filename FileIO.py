@@ -32,7 +32,7 @@ class FileIO:
     def createPairDirectories(self):
         pairs = self.readWhitelist()
         for pair in pairs:
-            pairDirectoryPath = os.path.join(self.marketDataDirectory, pair)
+            pairDirectoryPath = os.path.join(self.marketDataDirectory, pair[:-1])
             if not os.path.exists(pairDirectoryPath):
                 os.mkdir(pairDirectoryPath)
 
