@@ -1,5 +1,8 @@
 from MarketDataStream import MarketDataFetcher
-client = MarketDataFetcher()
+import pandas as pd
+"""client = MarketDataFetcher()
 client.getWhitelistPairsPastData()
 
-client.updateWhitelistData("BTCUSDT","1m")
+client.updateAllWhitelistData()"""
+print(pd.read_csv("MarketData/BTCUSDT/BTCUSDT_1m.csv").iloc[-4])
+
