@@ -92,4 +92,5 @@ class MarketDataFetcher:
         for pair in self.whitelist:
             for interval in self.intervals:
                 self.updateWhitelistData(pair,interval)
+                print(f"{pair}:{interval} last updated in {pd.Timestamp.now()}")
 
